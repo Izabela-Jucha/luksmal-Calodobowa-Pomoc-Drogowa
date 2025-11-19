@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- WAŻNE: Tytuł strony (H1 SEO) --><title>Pomoc Drogowa | Laweta 24H | Transport i Wypożyczalnia Samochodów | Zgorzelec - Polska - Niemcy - Czechy - LUKSMAL</title>
+    <!-- Opis meta (SEO) - KLUCZOWE SŁOWA: pomoc drogowa 24h, laweta, holowanie, niemcy, wypożyczalnia samochodów, zgorzelec --><meta name="description" content="Całodobowa pomoc drogowa, transport pojazdów, wynajem samochodów osobowych, dostawczych i autolawet. Ekspresowy dojazd i pełna obsługa LUKSMAL na terenie całej UE, Zgorzelec, Polska, Niemcy, Czechy.">
+    <meta name="keywords" content="Pomoc Drogowa 24h, Laweta Zgorzelec, Holowanie A4 Niemcy, Transport Aut Niemcy Polska, Wypożyczalnia Autolawet, Wynajem Samochodów Zgorzelec, LUKSMAL Łukasz Malitowicz, Laweta Niemcy, Holandia, Belgia, A2, A9, Berlin, Hamburg, Pomoc Drogowa Polska, Pomoc Drogowa Czechy">
+    
+    <!-- Ładowanie Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Używamy czcionki Inter dla nowoczesnego i czytelnego wyglądu */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb; /* Lekko szare tło */
+        }
+        .hero-bg {
+            /* Tło sekcji HERO - Zmienione na gradient, bez napisu w tle */
+            background: linear-gradient(135deg, #1e3a8a 0%, #111827 100%);
+            background-size: cover;
+            background-position: center;
+        }
+        .text-orange-luksmal {
+            color: #f97316; /* Główny kolor akcentu (pomarańczowy/bezpieczeństwa) */
+        }
+        .bg-blue-luksmal {
+            background-color: #1e3a8a; /* Główny kolor firmy (ciemny niebieski) */
+        }
+        .btn-call {
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.7); /* Wzmocniony cień dla przycisku akcji */
+        }
+        /* Styl dla wskaźnika ładowania */
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #f97316;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Styl dla sekcji FAQ (akordeon) */
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 16px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+        .faq-answer {
+            padding: 0 0 16px 0;
+            color: #4b5563;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-answer.open {
+            max-height: 200px; /* Dostosuj w zależności od max. treści */
+            transition: max-height 0.5s ease-in;
+        }
+        
+        /* Styl dla Logo LUKSMAL */
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 50;
+        }
+        .logo-text {
+            font-weight: 900;
+            font-size: 2rem;
+            color: white;
+            background-color: #f97316;
+            padding: 5px 15px;
+            border-radius: 4px;
+            transform: skewX(-10deg);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            display: inline-block;
+        }
+        @media (min-width: 768px) {
+            .logo-container {
+                top: 40px;
+                right: 40px;
+            }
+            .logo-text {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+
+    <!-- DANE STRUKTURNE SCHEMA.ORG (KLUCZOWE DLA LOKALNEGO SEO GOOGLE) --><script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "LUKSMAL Łukasz Malitowicz - Pomoc Drogowa, Transport i Wypożyczalnia Samochodów",
+      "telephone": "+48504931682",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Leśna 4",
+        "addressLocality": "Łagów",
+        "postalCode": "59-900",
+        "addressCountry": "PL"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "serviceType": ["Pomoc Drogowa", "Holowanie", "Laweta", "Wypożyczalnia Samochodów", "Transport Pojazdów"],
+      "description": "Całodobowa Pomoc Drogowa i Laweta 24h w Zgorzelcu, na A4 (Niemcy, Polska, Czechy). Transport aut i wynajem samochodów osobowych, dostawczych oraz autolawet."
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAGŁÓWEK / SEKCJA HERO --><header class="hero-bg bg-blue-luksmal text-white py-16 md:py-32 relative">
+        
+        <!-- LOGO LUKSMAL - PRAWY GÓRNY RÓG --><div class="logo-container">
+            <span class="logo-text">LUKSMAL</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-black bg-opacity-70 p-8 rounded-xl shadow-2xl">
+            <!-- H1 - Główny Nagłówek --><h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-2">
+                <span class="text-orange-luksmal">Całodobowa Pomoc Drogowa 24/7</span>
+            </h1>
+            
+            <!-- Mniejszy podtytuł --><h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-200 mb-6 tracking-wide">
+                Laweta | Transport | Wypożyczalnia Aut – Zgorzelec | Holowanie Niemcy, Polska, Czechy
+            </h2>
+
+            <!-- Opis pod spodem --><p class="text-xl sm:text-2xl font-light mb-10 max-w-4xl mx-auto">
+                Szybka i profesjonalna pomoc drogowa 24/7 oraz laweta Zgorzelec – i okolice. Natychmiast reagujemy w przypadku awarii, kolizji lub wypadku. Zapewniamy bezpieczne holowanie pojazdów na terenie całej Polski, Niemiec, Czech, - całej Unii Europejskiej. Oferujemy także wypożyczalnię aut zastępczych, abyś mógł bez przeszkód kontynuować podróż.
+            </p>
+            
+            <!-- PRZYCISK CALL TO ACTION 24/7 --><a href="tel:+48504931682" class="inline-flex items-center justify-center px-10 py-5 border border-transparent text-xl font-bold rounded-full text-blue-luksmal bg-orange-luksmal hover:bg-yellow-400 transition duration-300 btn-call shadow-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-7 h-7 mr-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75l1.09-1.09a1.5 1.5 0 012.12 0l1.09 1.09a3 3 0 004.24 0l1.09-1.09a1.5 1.5 0 012.12 0l1.09 1.09a3 3 0 004.24 0l1.09-1.09a1.5 1.5 0 012.12 0L21.75 6.75m-19.5 0v10.5a2.25 2.25 0 002.25 2.25h15a2.25 2.25 0 002.25-2.25V6.75m-19.5 0V5.25A2.25 2.25 0 014.5 3h15a2.25 2.25 0 012.25 2.25v1.5" />
+                </svg>
+                Telefon 24/7: +48 504 931 682
+            </a>
+        </div>
+    </header>
+
+    <!-- ROZBUDOWANA SEKCJA USŁUGI 1: POMOC DROGOWA I HOLOWANIE --><section class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- KLUCZOWY H2 DLA SEO: Pomoc Drogowa --><h2 class="text-3xl sm:text-4xl font-extrabold text-blue-luksmal mb-10 text-center border-b-2 border-orange-luksmal pb-3">
+                Pomoc Drogowa 24h – Zgorzelec, Görlitz i okolice | Laweta Niemcy
+            </h2>
+            
+            <p class="text-xl font-semibold text-gray-700 mb-8 max-w-4xl mx-auto text-center">
+                Działamy ekspresowo na autostradzie A4, w okolicach Zgorzelca / Görlitz, a także na wszystkich głównych niemieckich trasach. Jeśli szukasz „pomoc drogowa Niemcy 24h”, „laweta Niemcy” lub „holowanie A4” – jesteśmy dostępni od ręki.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                
+                <!-- Treść (L) - Zasięg i Holowane Pojazdy --><div>
+                    <h3 class="text-2xl font-bold text-orange-luksmal mb-4">
+                        Reagujemy w kilka–kilkanaście minut na terenie:
+                    </h3>
+                    <ul class="space-y-2 text-gray-700 mb-8 list-disc list-inside">
+                        <li><span class="font-bold">Zgorzelca i powiatu</span></li>
+                        <li><span class="font-bold">Görlitz i regionu DE</span></li>
+                        <li><span class="font-bold">autostrady A4 PL/DE/CZ</span></li>
+                        <li>dróg przygranicznych i parkingów TIR</li>
+                    </ul>
+
+                    <p class="text-gray-700 mb-6 leading-relaxed border-l-4 border-blue-luksmal pl-4">
+                        Holujemy auta z każdej sytuacji – również gdy pojazd nie odpala, ma uszkodzone koło lub uczestniczył w kolizji. Zapewniamy bezpieczny transport w kraju i zagranicą, przewożąc również pasażerów.
+                    </p>
+
+                    <h4 class="text-xl font-semibold text-blue-luksmal mb-3 mt-8">Laweta Niemcy 24/7 – holowanie na wszystkich autostradach:</h4>
+                    <p class="text-gray-700 mb-3">
+                        Odbieramy samochody z każdej trasy i każdego miasta w Niemczech. Obsługujemy:
+                    </p>
+                    <ul class="space-y-1 text-gray-700 grid grid-cols-2 list-disc list-inside">
+                        <li><span class="font-bold">A2, A4, A9, A20, A24, A13</span></li>
+                        <li><span class="font-bold">Berlin, Hamburg, Hannover</span></li>
+                        <li><span class="font-bold">Monachium, Magdeburg</span></li>
+                        <li><span class="font-bold">Drezno, Lipsk</span></li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-blue-luksmal mb-3 mt-8">Co holujemy?</h4>
+                    <div class="grid grid-cols-2 gap-2 text-gray-700">
+                        <p>• <span class="font-semibold">auta osobowe</span></p>
+                        <p>• <span class="font-semibold">busy i dostawcze</span></p>
+                        <p>• <span class="font-semibold">SUV i auta terenowe</span></p>
+                        <p>• <span class="font-semibold">motocykle</span></p>
+                        <p>• <span class="font-semibold">przyczepy i lekkie maszyny</span></p>
+                    </div>
+                </div>
+
+                <!-- Brak zdjęć - sekcja usunięta na życzenie klienta --><div class="flex flex-col justify-center items-center bg-blue-50 rounded-xl p-8 border-2 border-dashed border-blue-200 text-center h-full">
+                    <div class="text-6xl mb-4">🚑</div>
+                    <h3 class="text-xl font-bold text-blue-luksmal mb-2">Profesjonalny Sprzęt</h3>
+                    <p class="text-gray-600">Dysponujemy nowoczesną flotą lawet i autolawet przystosowanych do transportu każdego rodzaju pojazdu.</p>
+                </div>
+            </div>
+
+            <!-- SEKCJA USP I SYTUACJE KRYZYSOWE --><div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Dlaczego my? (USP) --><div>
+                    <h3 class="text-2xl font-bold text-blue-luksmal mb-4 border-b-2 border-orange-luksmal pb-2">
+                        Dlaczego klienci wybierają nas? (USP)
+                    </h3>
+                    <ul class="space-y-3 text-gray-700 text-lg">
+                        <li class="flex items-center"><span class="text-orange-luksmal mr-3 font-extrabold text-2xl">✔</span> Natychmiastowa reakcja 24/7</li>
+                        <li class="flex items-center"><span class="text-orange-luksmal mr-3 font-extrabold text-2xl">✔</span> Dojazd już od kilku minut na A4 i Zgorzelec</li>
+                        <li class="flex items-center"><span class="text-orange-luksmal mr-3 font-extrabold text-2xl">✔</span> Przejrzyste ceny i możliwość faktury</li>
+                        <li class="flex items-center"><span class="text-orange-luksmal mr-3 font-extrabold text-2xl">✔</span> Doświadczenie w holowaniu za granicą (całe Niemcy)</li>
+                        <li class="flex items-center"><span class="text-orange-luksmal mr-3 font-extrabold text-2xl">✔</span> Obsługa po polsku i niemiecku</li>
+                        <li class="flex items-center"><span class="text-orange-luksmal mr-3 font-extrabold text-2xl">✔</span> Zawsze bezpieczny załadunek i transport</li>
+                    </ul>
+                </div>
+
+                <!-- Najczęstsze Sytuacje --><div>
+                    <h3 class="text-2xl font-bold text-blue-luksmal mb-4 border-b-2 border-orange-luksmal pb-2">
+                        Najczęstsze sytuacje, w których pomagamy
+                    </h3>
+                    <div class="grid grid-cols-2 gap-y-3 text-gray-700 text-lg">
+                        <p class="flex items-center"><span class="text-orange-luksmal mr-2">▪</span> awaria na autostradzie</p>
+                        <p class="flex items-center"><span class="text-orange-luksmal mr-2">▪</span> kolizja w Niemczech</p>
+                        <p class="flex items-center"><span class="text-orange-luksmal mr-2">▪</span> auto nie odpala</p>
+                        <p class="flex items-center"><span class="text-orange-luksmal mr-2">▪</span> przebita opona</p>
+                        <p class="flex items-center"><span class="text-orange-luksmal mr-2">▪</span> zatrzymany samochód</p>
+                        <p class="flex items-center"><span class="text-orange-luksmal mr-2">▪</span> uszkodzenie po wypadku</p>
+                        <p class="flex items-center"><span class="text-orange-luksmal mr-2">▪</span> holowanie z A4 do warsztatu</p>
+                        <p class="flex items-center"><span class="text-orange-luksmal mr-2">▪</span> brak paliwa (dowóz)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEKCA FAQ - najczęstsze pytania --><div class="mt-16 max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-xl border-t-4 border-blue-luksmal">
+                <h3 class="text-2xl font-bold text-blue-luksmal mb-4 text-center">
+                    FAQ – najczęściej zadawane pytania (Laweta Niemcy)
+                </h3>
+                
+                <div class="space-y-2">
+                    <!-- Pytanie 1 --><div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Ile kosztuje holowanie auta z Niemiec do Polski?</span>
+                            <span class="arrow text-orange-luksmal">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Cena zależy od trasy i rodzaju pojazdu (wagi, wymiarów, stanu uszkodzeń). <span class="font-bold">Zadzwoń do nas, a podamy koszt od razu:</span> <a href="tel:+48504931682" class="text-blue-luksmal font-bold hover:underline">+48 504 931 682</a>.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pytanie 2 --><div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Jak szybko przyjedzie laweta LUKSMAL?</span>
+                            <span class="arrow text-orange-luksmal">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Reagujemy <span class="font-bold">natychmiast</span>. Zazwyczaj kilka–kilkanaście minut w Zgorzelcu i na A4. W Niemczech – dojazd jest realizowany najszybciej, jak to możliwe. Ekspresowy czas reakcji jest naszym priorytetem.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pytanie 3 --><div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Czy Pomoc Drogowa działa również w nocy i święta?</span>
+                            <span class="arrow text-orange-luksmal">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><span class="font-bold">Tak.</span> Jesteśmy dostępni 24 godziny na dobę, 7 dni w tygodniu, przez cały rok. Nasz telefon alarmowy jest zawsze aktywny.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pytanie 4 --><div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Czy mogę jechać lawetą razem z kierowcą?</span>
+                            <span class="arrow text-orange-luksmal">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p><span class="font-bold">Tak.</span> Nasze autolawety są przystosowane do przewozu pasażerów. Zapewniamy komfortowe miejsce dla kilku osób, abyś nie musiał martwić się o transport zastępczy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRZYCISK Z NUMEREM ALARMOWYM --><div class="text-center mt-12">
+                <p class="text-3xl font-bold text-blue-luksmal mb-3">Telefon Alarmowy 24/7</p>
+                <a href="tel:+48504931682" class="inline-flex items-center justify-center px-10 py-5 text-2xl font-bold rounded-full text-white bg-orange-luksmal hover:bg-yellow-400 hover:text-blue-luksmal transition duration-300 btn-call">
+                    +48 504 931 682
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOWA SEKCJA: WYNAJEM SAMOCHODÓW, BUSÓW I AUTOLAWET --><section class="py-16 md:py-20 bg-f7f9fb">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Nagłówek sekcji --><h2 class="text-3xl sm:text-4xl font-extrabold text-blue-luksmal mb-10 text-center border-b-2 border-orange-luksmal pb-3">
+                Wynajem Samochodów, Busów i Autolawet – Zgorzelec | Polska – Niemcy – UE
+            </h2>
+            
+            <!-- Wstęp --><p class="text-xl text-gray-700 mb-10 max-w-4xl mx-auto text-center leading-relaxed">
+                Oferujemy szybki i wygodny wynajem samochodów, busów oraz autolawet w Zgorzelcu i na terenie przygranicznego regionu. To idealna opcja, gdy potrzebujesz auta zastępczego po awarii, planujesz wyjazd, przeprowadzkę, pracę w terenie lub chcesz samodzielnie przewieźć pojazd na lawecie. Zapewniamy wynajem krótkoterminowy i długoterminowy – w konkurencyjnych cenach, z przejrzystymi zasadami i natychmiastową dostępnością pojazdów.
+            </p>
+            
+            <!-- Siatka 3 Kart Usług --><div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Karta 1: Auta Osobowe --><div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-orange-luksmal hover:shadow-xl transition duration-300">
+                    <div class="text-4xl mb-4">🚗</div>
+                    <h3 class="text-2xl font-bold text-blue-luksmal mb-3">Wynajem samochodów – auta osobowe</h3>
+                    <p class="font-semibold text-gray-600 mb-2">Dostępne klasy pojazdów:</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
+                        <li>ekonomiczne i miejskie</li>
+                        <li>kompaktowe i rodzinne</li>
+                        <li>kombi i SUV</li>
+                    </ul>
+                    <p class="text-sm text-gray-500">
+                        Auta są czyste, zadbane, serwisowane i przygotowane do dalszej jazdy — również do Niemiec i krajów UE.
+                    </p>
+                </div>
+
+                <!-- Karta 2: Busy i Dostawcze --><div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-blue-luksmal hover:shadow-xl transition duration-300">
+                    <div class="text-4xl mb-4">🚐</div>
+                    <h3 class="text-2xl font-bold text-blue-luksmal mb-3">Wynajem busów i pojazdów dostawczych</h3>
+                    <p class="font-semibold text-gray-600 mb-2">Idealne do:</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
+                        <li>transportu towarów</li>
+                        <li>przeprowadzek</li>
+                        <li>pracy na budowie</li>
+                        <li>wyjazdów grupowych</li>
+                    </ul>
+                    <p class="text-sm text-gray-500">
+                        Oferujemy busy osobowe i dostawcze (do 3,5 t), gotowe do natychmiastowego odbioru.
+                    </p>
+                </div>
+
+                <!-- Karta 3: Lawety i Autolawety --><div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-orange-luksmal hover:shadow-xl transition duration-300">
+                    <div class="text-4xl mb-4">🛣️</div>
+                    <h3 class="text-2xl font-bold text-blue-luksmal mb-3">Wynajem lawet i autolawet</h3>
+                    <p class="font-semibold text-gray-600 mb-2">Samodzielny transport:</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
+                        <li>samochodów osobowych</li>
+                        <li>busów i aut dostawczych</li>
+                        <li>motocykli</li>
+                        <li>przyczep i lekkich maszyn</li>
+                    </ul>
+                    <p class="text-sm text-gray-500">
+                        Wszystkie pojazdy posiadają aktualne przeglądy i pełną gotowość do jazdy na terenie całej Unii Europejskiej.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Dlaczego warto + CTA --><div class="bg-white rounded-xl shadow-lg p-8 md:p-10 border-2 border-dashed border-blue-200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                    
+                    <!-- Lista Korzyści --><div>
+                        <h3 class="text-2xl font-bold text-blue-luksmal mb-6">Dlaczego warto wynająć u nas?</h3>
+                        <ul class="space-y-3 text-gray-700 text-lg">
+                            <li class="flex items-center"><span class="text-orange-luksmal mr-3 font-extrabold text-xl">✔</span> Szybka rezerwacja 24/7</li>
+                            <li class="flex items-center"><span class="text-orange-luksmal mr-3 font-extrabold text-xl">✔</span> Auta przygotowane do jazdy po PL i DE</li>
+                            <li class="flex items-center"><span class="text-orange-luksmal mr-3 font-extrabold text-xl">✔</span> Przejrzyste zasady wynajmu</li>
+                            <li class="flex items-center"><span class="text-orange-luksmal mr-3 font-extrabold text-xl">✔</span> Konkurencyjne ceny bez ukrytych opłat</li>
+                            <li class="flex items-center"><span class="text-orange-luksmal mr-3 font-extrabold text-xl">✔</span> Możliwość wynajmu auta zastępczego po awarii</li>
+                        </ul>
+                    </div>
+
+                    <!-- Telefon Rezerwacyjny --><div class="text-center">
+                        <p class="text-gray-600 text-lg mb-4">Potrzebujesz auta od ręki?</p>
+                        <div class="bg-blue-50 p-6 rounded-xl inline-block">
+                            <p class="text-xl font-bold text-blue-luksmal mb-2">Rezerwacja i dostępność pojazdów</p>
+                            <a href="tel:+48504931682" class="text-3xl md:text-4xl font-extrabold text-orange-luksmal hover:text-yellow-500 transition duration-300 block">
+                                +48 504 931 682
+                            </a>
+                            <p class="text-sm text-gray-500 mt-2">Telefon czynny 24/7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEKCJA DLACZEGO MY --><section class="bg-blue-luksmal text-white py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-orange-luksmal mb-6">
+                Dlaczego LUKSMAL? Twoje Bezpieczeństwo Jest Priorytetem.
+            </h2>
+            <p class="text-xl font-light mb-10 max-w-3xl mx-auto">
+                Dysponujemy nowoczesnym sprzętem i jesteśmy gotowi do działania w każdej sytuacji, 24 godziny na dobę.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="p-4 bg-white bg-opacity-10 rounded-lg">
+                    <p class="text-4xl font-bold text-orange-luksmal mb-2">24/7</p>
+                    <h3 class="text-lg font-semibold">Całodobowa Dostępność</h3>
+                    <p class="text-sm opacity-80">Jesteśmy do Twojej dyspozycji w dzień i w nocy. Zadzwoń o każdej porze.</p>
+                </div>
+                <div class="p-4 bg-white bg-opacity-10 rounded-lg">
+                    <p class="text-4xl font-bold text-orange-luksmal mb-2">⚡</p>
+                    <h3 class="text-lg font-semibold">Natychmiastowa Reakcja</h3>
+                    <p class="text-sm opacity-80">Gwarantujemy szybki dojazd do Zgorzelca i na trasę A4 w obu kierunkach.</p>
+                </div>
+                <div class="p-4 bg-white bg-opacity-10 rounded-lg">
+                    <p class="text-4xl font-bold text-orange-luksmal mb-2">⭐</p>
+                    <h3 class="text-lg font-semibold">Doświadczony Zespół</h3>
+                    <p class="text-sm opacity-80">Wykwalifikowani kierowcy z certyfikatami to gwarancja bezpieczeństwa transportu.</p>
+                </div>
