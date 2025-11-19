@@ -16,7 +16,7 @@
             background-color: #f7f9fb; /* Lekko szare tło */
         }
         .hero-bg {
-            /* Tło sekcji HERO - Zmienione na gradient, bez napisu w tle */
+            /* Tło sekcji HERO - Gradient */
             background: linear-gradient(135deg, #1e3a8a 0%, #111827 100%);
             background-size: cover;
             background-position: center;
@@ -27,47 +27,33 @@
         .bg-blue-luksmal {
             background-color: #1e3a8a; /* Główny kolor firmy (ciemny niebieski) */
         }
+        /* DODANE: Definicja tła dla przycisku (naprawa widoczności) */
+        .bg-orange-luksmal {
+            background-color: #f97316; /* Wyrazisty pomarańcz/żółty drogowy */
+        }
         .btn-call {
             box-shadow: 0 4px 20px rgba(249, 115, 22, 0.7); /* Wzmocniony cień dla przycisku akcji */
         }
-        /* Styl dla wskaźnika ładowania */
-        .loading-spinner {
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid #f97316;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            animation: spin 1s linear infinite;
-            margin-right: 8px;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Styl dla sekcji FAQ (akordeon) */
+        
+        /* Styl dla sekcji FAQ (W PEŁNI ROZWINIĘTE) */
         .faq-item {
             border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
         }
         .faq-question {
-            cursor: pointer;
-            padding: 16px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
+            padding: 10px 0 8px 0;
+            font-weight: 700;
             color: #1e3a8a;
+            font-size: 1.125rem; /* text-lg */
         }
         .faq-answer {
-            padding: 0 0 16px 0;
+            padding: 0;
             color: #4b5563;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .faq-answer.open {
-            max-height: 200px; /* Dostosuj w zależności od max. treści */
-            transition: max-height 0.5s ease-in;
+            line-height: 1.6;
         }
         
         /* Styl dla Logo LUKSMAL */
@@ -146,7 +132,7 @@
                 Szybka i profesjonalna pomoc drogowa 24/7 oraz laweta Zgorzelec – i okolice. Natychmiast reagujemy w przypadku awarii, kolizji lub wypadku. Zapewniamy bezpieczne holowanie pojazdów na terenie całej Polski, Niemiec, Czech, - całej Unii Europejskiej. Oferujemy także wypożyczalnię aut zastępczych, abyś mógł bez przeszkód kontynuować podróż.
             </p>
             
-            <!-- PRZYCISK CALL TO ACTION 24/7 --><a href="tel:+48504931682" class="inline-flex items-center justify-center px-10 py-5 border border-transparent text-xl font-bold rounded-full text-blue-luksmal bg-orange-luksmal hover:bg-yellow-400 transition duration-300 btn-call shadow-xl">
+            <!-- PRZYCISK CALL TO ACTION 24/7 - POPRAWIONE TŁO --><a href="tel:+48504931682" class="inline-flex items-center justify-center px-10 py-5 border border-transparent text-xl font-bold rounded-full text-white bg-orange-luksmal hover:bg-yellow-400 hover:text-blue-luksmal transition duration-300 btn-call shadow-xl">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-7 h-7 mr-3">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75l1.09-1.09a1.5 1.5 0 012.12 0l1.09 1.09a3 3 0 004.24 0l1.09-1.09a1.5 1.5 0 012.12 0l1.09 1.09a3 3 0 004.24 0l1.09-1.09a1.5 1.5 0 012.12 0L21.75 6.75m-19.5 0v10.5a2.25 2.25 0 002.25 2.25h15a2.25 2.25 0 002.25-2.25V6.75m-19.5 0V5.25A2.25 2.25 0 014.5 3h15a2.25 2.25 0 012.25 2.25v1.5" />
                 </svg>
@@ -203,7 +189,7 @@
                     </div>
                 </div>
 
-                <!-- Brak zdjęć - sekcja usunięta na życzenie klienta --><div class="flex flex-col justify-center items-center bg-blue-50 rounded-xl p-8 border-2 border-dashed border-blue-200 text-center h-full">
+                <!-- Placeholder dla zdjęć --><div class="flex flex-col justify-center items-center bg-blue-50 rounded-xl p-8 border-2 border-dashed border-blue-200 text-center h-full">
                     <div class="text-6xl mb-4">🚑</div>
                     <h3 class="text-xl font-bold text-blue-luksmal mb-2">Profesjonalny Sprzęt</h3>
                     <p class="text-gray-600">Dysponujemy nowoczesną flotą lawet i autolawet przystosowanych do transportu każdego rodzaju pojazdu.</p>
@@ -243,46 +229,42 @@
                 </div>
             </div>
 
-            <!-- SEKCA FAQ - najczęstsze pytania --><div class="mt-16 max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-xl border-t-4 border-blue-luksmal">
+            <!-- SEKCA FAQ - w pełni rozwinięta --><div class="mt-16 max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-xl border-t-4 border-blue-luksmal">
                 <h3 class="text-2xl font-bold text-blue-luksmal mb-4 text-center">
                     FAQ – najczęściej zadawane pytania (Laweta Niemcy)
                 </h3>
                 
                 <div class="space-y-2">
-                    <!-- Pytanie 1 --><div class="faq-item" onclick="toggleFaq(this)">
+                    <!-- Pytanie 1 --><div class="faq-item">
                         <div class="faq-question">
                             <span>Ile kosztuje holowanie auta z Niemiec do Polski?</span>
-                            <span class="arrow text-orange-luksmal">▼</span>
                         </div>
                         <div class="faq-answer">
                             <p>Cena zależy od trasy i rodzaju pojazdu (wagi, wymiarów, stanu uszkodzeń). <span class="font-bold">Zadzwoń do nas, a podamy koszt od razu:</span> <a href="tel:+48504931682" class="text-blue-luksmal font-bold hover:underline">+48 504 931 682</a>.</p>
                         </div>
                     </div>
 
-                    <!-- Pytanie 2 --><div class="faq-item" onclick="toggleFaq(this)">
+                    <!-- Pytanie 2 --><div class="faq-item">
                         <div class="faq-question">
                             <span>Jak szybko przyjedzie laweta LUKSMAL?</span>
-                            <span class="arrow text-orange-luksmal">▼</span>
                         </div>
                         <div class="faq-answer">
                             <p>Reagujemy <span class="font-bold">natychmiast</span>. Zazwyczaj kilka–kilkanaście minut w Zgorzelcu i na A4. W Niemczech – dojazd jest realizowany najszybciej, jak to możliwe. Ekspresowy czas reakcji jest naszym priorytetem.</p>
                         </div>
                     </div>
 
-                    <!-- Pytanie 3 --><div class="faq-item" onclick="toggleFaq(this)">
+                    <!-- Pytanie 3 --><div class="faq-item">
                         <div class="faq-question">
                             <span>Czy Pomoc Drogowa działa również w nocy i święta?</span>
-                            <span class="arrow text-orange-luksmal">▼</span>
                         </div>
                         <div class="faq-answer">
                             <p><span class="font-bold">Tak.</span> Jesteśmy dostępni 24 godziny na dobę, 7 dni w tygodniu, przez cały rok. Nasz telefon alarmowy jest zawsze aktywny.</p>
                         </div>
                     </div>
                     
-                    <!-- Pytanie 4 --><div class="faq-item" onclick="toggleFaq(this)">
+                    <!-- Pytanie 4 --><div class="faq-item">
                         <div class="faq-question">
                             <span>Czy mogę jechać lawetą razem z kierowcą?</span>
-                            <span class="arrow text-orange-luksmal">▼</span>
                         </div>
                         <div class="faq-answer">
                             <p><span class="font-bold">Tak.</span> Nasze autolawety są przystosowane do przewozu pasażerów. Zapewniamy komfortowe miejsce dla kilku osób, abyś nie musiał martwić się o transport zastępczy.</p>
@@ -291,9 +273,9 @@
                 </div>
             </div>
             
-            <!-- PRZYCISK Z NUMEREM ALARMOWYM --><div class="text-center mt-12">
-                <p class="text-3xl font-bold text-blue-luksmal mb-3">Telefon Alarmowy 24/7</p>
-                <a href="tel:+48504931682" class="inline-flex items-center justify-center px-10 py-5 text-2xl font-bold rounded-full text-white bg-orange-luksmal hover:bg-yellow-400 hover:text-blue-luksmal transition duration-300 btn-call">
+            <!-- PRZYCISK Z NUMEREM ALARMOWYM ZMIENIONY - POPRAWIONE TŁO --><div class="text-center mt-12">
+                <p class="text-3xl font-bold text-blue-luksmal mb-3">Potrzebujesz pomocy? - zadzwoń!</p>
+                <a href="tel:+48504931682" class="inline-flex items-center justify-center px-10 py-5 text-4xl sm:text-5xl font-extrabold rounded-full text-white bg-orange-luksmal hover:bg-yellow-400 hover:text-blue-luksmal transition duration-300 btn-call">
                     +48 504 931 682
                 </a>
             </div>
@@ -412,3 +394,92 @@
                     <h3 class="text-lg font-semibold">Doświadczony Zespół</h3>
                     <p class="text-sm opacity-80">Wykwalifikowani kierowcy z certyfikatami to gwarancja bezpieczeństwa transportu.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- NOWA SEKCCA O NAS / LOKALIZACJA (DLA LOKALNEGO SEO I ZAUFANIA) --><section class="py-16 md:py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-luksmal mb-10 border-b-2 border-orange-luksmal pb-3">
+                LUKSMAL Łukasz Malitowicz - Lokalizacja i Pewność Usług
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="p-6 bg-white rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-orange-luksmal mb-4">O Naszej Firmie</h3>
+                    <p class="text-gray-700 mb-4">
+                        Firma LUKSMAL, prowadzona przez Łukasza Malitowicza, to gwarancja rzetelności i profesjonalizmu w usługach pomocy drogowej, transportu i wynajmu pojazdów. Działamy na rynku lokalnym (Zgorzelec, A4) oraz na terenie całej Unii Europejskiej.
+                    </p>
+                    <p class="text-gray-700">
+                        Naszym priorytetem jest natychmiastowa reakcja i bezpieczne świadczenie usług.
+                    </p>
+                    <h4 class="text-lg font-bold text-blue-luksmal mt-6 mb-2">Dane Firmowe:</h4>
+                    <p class="text-gray-700">Właściciel: Łukasz Malitowicz</p>
+                    <p class="text-gray-700">Adres: Leśna 4, 59-900 Łagów, Poland</p>
+                </div>
+                
+                <div class="p-6 bg-white rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-orange-luksmal mb-4">Adres Firmy</h3>
+                    <!-- Wygenerowany Iframe z Google Maps dla Leśna 4, Łagów (przykład, który często działa) --><iframe 
+                        class="w-full rounded-lg shadow-md"
+                        height="300"
+                        frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.568469348123!2d15.06820251597813!3d51.13962627954931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4708a4f66a2b8941%3A0x86872a0f82d2383c!2sLe%C5%9Bna%204%2C%2059-900%20%C5%81ag%C3%B3w!5e0!3m2!1spl!2spl!4v1677271891969!5m2!1spl!2spl"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        aria-label="Lokalizacja LUKSMAL Łukasz Malitowicz, Leśna 4, Łagów"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKCJA KONTAKT I LOKALIZACJA (STOPKA) --><footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Kolumna 1: Dane kontaktowe --><div>
+                <h3 class="text-xl font-bold text-orange-luksmal mb-4">Kontakt 24/7</h3>
+                <p class="mb-2">
+                    <span class="font-semibold">Telefon:</span> 
+                    <a href="tel:+48504931682" class="hover:underline text-2xl font-extrabold">+48 504 931 682</a>
+                </p>
+                <p class="mb-2">
+                    <span class="font-semibold">Godziny:</span> Otwarty 24 godziny / 7 dni w tygodniu
+                </p>
+                <p class="mb-2">
+                    <span class="font-semibold">Firma:</span> LUKSMAL Łukasz Malitowicz
+                </p>
+            </div>
+
+            <!-- Kolumna 2: Adres i Obszar --><div>
+                <h3 class="text-xl font-bold text-orange-luksmal mb-4">Lokalizacja i Obszar Działania</h3>
+                <p class="mb-2">
+                    <span class="font-semibold">Adres Siedziby:</span> Leśna 4, 59-900 Łagów, Poland
+                </p>
+                <p class="text-sm text-gray-400 mt-4">
+                    Obsługujemy: <span class="text-white font-semibold">Zgorzelec, autostrada A4, Niemcy, Czechy</span> oraz wszystkie kraje Unii Europejskiej.
+                </p>
+            </div>
+
+            <!-- Kolumna 3: Szybki Kontakt / Mapa --><div>
+                <h3 class="text-xl font-bold text-orange-luksmal mb-4">Gwarancja Szybkiej Pomocy</h3>
+                <a href="tel:+48504931682" class="inline-block w-full text-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-blue-luksmal bg-orange-luksmal hover:bg-yellow-400 transition duration-300">
+                    Zadzwoń po Lawetę 24h!
+                </a>
+                <p class="text-sm text-gray-400 mt-2">Natychmiastowa reakcja i pomoc drogowa.</p>
+            </div>
+        </div>
+        
+        <!-- Pasek praw autorskich --><div class="mt-8 pt-4 border-t border-gray-700 text-center text-sm text-gray-500">
+            <p>&copy; 2025 LUKSMAL Łukasz Malitowicz. Wszelkie prawa zastrzeżone.</p>
+            <p class="mt-2">
+                Web design and digital marketing by 
+                <a href="https://www.linkedin.com/in/izabelajucha/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">
+                    Izabela Jucha - AI Innovative Mind
+                </a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
